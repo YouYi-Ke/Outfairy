@@ -1,30 +1,30 @@
 <template>
-    <!-- 側邊欄 -->
-    <aside class="sidebar">
-      <ul>
-        <div v-for="category in categories" :key="category" @click="$emit('filter', category)">
-          {{ category }}
-        </div>
-      </ul>
-    </aside>
+    <div class="container">
+        <!-- 側邊欄 -->
+        <aside class="sidebar">
+        <ul>
+            <li>ALL PRODUCTS</li>
+            <li>TOP</li>
+            <li>BOTTOM</li>
+            <li>ACCESSORIES</li>
+            <li>WEEKLY TREND</li>
+        </ul>
+        </aside>
 
-    <!-- 商品列 -->
-    <div class="product-grid">
-        <div v-for="product in displayProducts" :key="product.id" class="product-card">
-            <img :src="product.image" class="product-image" alt="Product">
-            <p class="product-name">{{ product.name }}</p>
-            <p class="product-price">{{ product.price }}</p>
-        </div>
+        <!-- 商品列 -->
+        <main class="product-grid">
+            <div class="product-card" v-for="product in displayProducts" :key="product.id">
+                <img :src="product.image" class="product-image" alt="Product">
+                <p class="product-name">{{ product.name }}</p>
+                <p class="product-price">{{ product.price }}</p>
+            </div>
+        </main>
     </div>
     
 </template>
   
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-
-const categories = ref([
-    "ALL PRODUCTS","TOP","BOTTOM","ACCESORIES","WEEKLY TREND"
-]);
 
 const currentIndex = ref(0);
 let intervalId = null;
@@ -74,8 +74,6 @@ let displayProducts = ref(products.value.slice(0, 24));
 
 <style scoped>
 :root {
-    --carousel-width: 3vw;
-    --carousel-height: 1vw;
     --product-width: 1vw;
     --product-height: 2vw;
 }
@@ -84,44 +82,27 @@ let displayProducts = ref(products.value.slice(0, 24));
     padding: 0;
     margin: 0 5rem;
     box-sizing: border-box;
-}
-
-.hero-section {
-    width: var(--carousel-width);
-    height: var(--carousel-height);
-    margin: 0 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel {
-    width: var(--carousel-width);
-    height: var(--carousel-height);
-    position: relative;
-}
-
-.carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    align-items: flex-start; /* 讓 sidebar 與上方欄位對齊 */
 }
 
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
+.sidebar li {
+    justify-content: flex-start;
+    position: relative;
+    white-space: nowrap;
+    flex: 1;
+    font-family: "Inknut Antiqua", serif;
 }
 
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+.sidebar ul {
+  list-style-type: none; /* 移除圓點 */
+  font-size: 20px;
 }
-
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3vw;
+    gap: 1vw;
     margin: 5rem;
     margin-bottom: 1rem;
     font-family: "Imprima", serif;
