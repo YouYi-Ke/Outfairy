@@ -10,7 +10,7 @@
             <li>WEEKLY TREND</li>
         </ul>
         </aside>
-
+        
         <!-- 商品列 -->
         <main class="product-grid">
             <div class="product-card" v-for="product in displayProducts" :key="product.id">
@@ -43,7 +43,7 @@ const goToSlide = (index) => {
 
 // 先用範例，之後要引入API
 const products = ref([
-    { id: 1, name: "Vintage washed jeans", price: "$280", image: "/images/clothPhoto.jpeg" },
+    { id: 1, name: "Cashmere Crewneck", price: "$200", image: "/images/shopPhoto1.jpg" },
     { id: 2, name: "Windproof jacket", price: "$350", image: "/images/clothPhoto.jpeg" },
     { id: 3, name: "Short-sleeved denim suit", price: "$400", image: "/images/clothPhoto.jpeg" },
     { id: 4, name: "Green cargo pants", price: "$280", image: "/images/clothPhoto.jpeg" },
