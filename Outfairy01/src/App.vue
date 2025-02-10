@@ -1,5 +1,6 @@
 <script setup>
 import MainRoomPage from "./MainRoomPage.vue";
+import ShopRoomPage from "./ShopRoomPage.vue";
 import AboutUsPage from "./AboutUs.vue";
 import Footer from "./footer.vue";
 import { ref } from "vue";
@@ -27,6 +28,7 @@ let change = function (clickedPage) {
     </nav>
     <main>
         <AboutUsPage v-if="page === 'AboutUs'"></AboutUsPage>
+        <ShopRoomPage v-else-if="page === 'Shop'"></ShopRoomPage>
         <MainRoomPage v-else-if="page === 'Main'"></MainRoomPage>
     </main>
     <Footer></Footer>
