@@ -26,21 +26,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const currentIndex = ref(0);
-let intervalId = null;
-
-const nextSlide = () => {
-    currentIndex.value = (currentIndex.value + 1) % bannerImages.length;
-};
-
-const prevSlide = () => {
-    currentIndex.value = (currentIndex.value - 1 + bannerImages.length) % bannerImages.length;
-};
-
-const goToSlide = (index) => {
-    currentIndex.value = index;
-};
-
 // 先用範例，之後要引入API
 const products = ref([
     { id: 1, name: "Cashmere Crewneck", price: "$200", image: "/images/shopPhoto1.jpg" },
@@ -86,25 +71,39 @@ let displayProducts = ref(products.value.slice(0, 24));
     align-items: flex-start; /* 讓 sidebar 與上方欄位對齊 */
 }
 
-.sidebar li {
-    justify-content: flex-start;
-    position: relative;
-    white-space: nowrap;
-    flex: 1;
+.sidebar {
+    width: 200px;
     font-family: "Inknut Antiqua", serif;
 }
 
 .sidebar ul {
   list-style-type: none; /* 移除圓點 */
   font-size: 20px;
+  padding: 0; 
 }
+
+.sidebar li {
+    justify-content: flex-start;
+    position: relative;
+    white-space: nowrap;
+    flex: 1;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.sidebar li:hover {
+    color: gray;
+}
+
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1vw;
-    margin: 5rem;
+    margin: 10px;
     margin-bottom: 1rem;
+    padding-left: 80px;
     font-family: "Imprima", serif;
     justify-content: center;
     text-align: center;
