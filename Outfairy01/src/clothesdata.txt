@@ -1,0 +1,27 @@
+// 先用範例，之後要引入API
+const products = ref([
+    { id: 1, name: "Cashmere Crewneck", price: "$200", image: "/images/shopPhoto1.jpg" },
+    { id: 2, name: "Oversized Knitwear", price: "$140", image: "/images/shopPhoto1.jpg" },
+    { id: 3, name: "Short-sleeved denim suit", price: "$400", image: "/images/shopPhoto1.jpg"},
+    { id: 4, name: "Green cargo pants", price: "$280", image: "/images/shopPhoto1.jpg" },
+    { id: 5, name: "Green dress", price: "$300", image: "/images/shopPhoto1.jpg" },
+    { id: 6, name: "American vintage top", price: "$220", image: "/images/shopPhoto1.jpg" },
+    { id: 7, name: "Blsue floor-to-ceiling pants", price: "$450", image: "/images/shopPhoto1.jpg"},
+    { id: 8, name: "Striped sweater", price: "$420", image: "/images/shopPhoto1.jpg"},
+    { id: 9, name: "Short-sleeve outerwear", price: "$320", image: "/images/shopPhoto1.jpg" },
+    { id: 10, name: "Striped sweater", price: "$420", image: "/images/shopPhoto1.jpg" },
+    { id: 11, name: "Striped sweater", price: "$420", image: "/images/shopPhoto1.jpg" },
+    { id: 12, name: "Striped sweater", price: "$420", image: "/images/shopPhoto1.jpg" },
+    { id: 13, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 14, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 15, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },    
+    { id: 16, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 17, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 18, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 19, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 20, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 21, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 22, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 23, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" },
+    { id: 24, name: "Striped sweater", price: "$420", image: "/images/clothPhoto.jpeg" }
+])
