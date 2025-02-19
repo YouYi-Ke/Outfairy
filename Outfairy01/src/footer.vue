@@ -56,7 +56,7 @@
 
 .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: unwrap;
     justify-content: center;
     text-align: center;
 }
@@ -105,14 +105,14 @@ ul {
         margin-bottom: 30px;
     }
     .footer-col h4{
-        font-size: 16px;
+        font-size: 12px;
         color: black;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-weight: 500;
         position: relative;
     }
-    .footer-col ul li{
-        font-size: 12px;
+    .footer-col ul li a{
+        font-size: 10px;
         text-transform: capitalize;
         color: black;
         text-decoration: none;

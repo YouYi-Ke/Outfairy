@@ -11,30 +11,43 @@ let change = function (clickedPage) {
 </script>
 
 <template>
-    <header>
-        <h1>Outfairy</h1>
-    </header>
-    <nav>
-        <ul class="nav-left">
-            <li :class="page === 'Main' ? 'current' : ''" @click="change('Main');">Main Room</li>
-            <li :class="page === 'Shop' ? 'current' : ''" @click="change('Shop');">Shop Room</li>
-            <li :class="page === 'AboutUs' ? 'current' : ''" @click="change('AboutUs');">About Us</li>
-        </ul>
-        <!-- <ul class="nav-right">
-            <li :class="page === 'Personal' ? 'current' : ''" @click="change('Personal');">Personal</li>
-            <li :class="page === 'Cart' ? 'current' : ''" @click="change('Cart');">Cart</li>
-            <li :class="page === 'Search' ? 'current' : ''" @click="change('Search');">Search</li>
-        </ul> -->
-    </nav>
-    <main>
-        <AboutUsPage v-if="page === 'AboutUs'"></AboutUsPage>
-        <ShopRoomPage v-else-if="page === 'Shop'"></ShopRoomPage>
-        <MainRoomPage v-else-if="page === 'Main'"></MainRoomPage>
-    </main>
-    <Footer></Footer>
+    <div class="container">
+        <header>
+            <h1><a href="#">Outfairy</a></h1>
+        </header>
+        <nav>
+            <ul class="nav-left">
+                <li :class="page === 'Main' ? 'current' : ''" @click="change('Main');">Main Room</li>
+                <li :class="page === 'Shop' ? 'current' : ''" @click="change('Shop');">Shop Room</li>
+                <li :class="page === 'AboutUs' ? 'current' : ''" @click="change('AboutUs');">About Us</li>
+            </ul>
+            <ul class="nav-right">
+                <li :class="page === 'Personal' ? 'current' : ''" @click="change('Personal');">
+                    <font-awesome-icon :icon="['fas', 'user']" />
+                </li>
+                <li :class="page === 'Cart' ? 'current' : ''" @click="change('Cart');">
+                    <font-awesome-icon :icon="['fas', 'shopping-cart']" />
+                </li>
+                <li :class="page === 'Search' ? 'current' : ''" @click="change('Search');">
+                    <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <AboutUsPage v-if="page === 'AboutUs'"></AboutUsPage>
+            <ShopRoomPage v-else-if="page === 'Shop'"></ShopRoomPage>
+            <MainRoomPage v-else-if="page === 'Main'"></MainRoomPage>
+        </main>
+        <Footer></Footer>
+    </div>
 </template>
 
 <style scoped>
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
 header {
     display: flex;
     justify-content: center;
@@ -48,10 +61,15 @@ h1 {
     padding-top: .5em;
 }
 
+h1 a {
+    text-decoration: none;
+    color: black;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     font-size: clamp(.1rem, calc(.3vw + 1rem), 1rem);
@@ -93,6 +111,7 @@ nav {
 
 .nav-right {
     justify-content: flex-end;
+    position: relative;
     flex: 1;
 }
 

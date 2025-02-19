@@ -30,7 +30,7 @@
             </div>
             <div class="address">
                 客服時間｜週一至週五 12:00-18:00（不含國定假日）<br />
-                地址｜No.xx, xxRd xxx,Taipei City, Taiwan (R.O.C.)（工作室不對外開放）<br />
+                地址｜No.xx, xxRd xxx,Taipei City, Taiwan (R.O.C.)<br />
                 統編｜xxxxxx<br />
             </div>
         </article>
@@ -43,7 +43,12 @@ main {
     text-align: center;
     line-height: 1.5em;
     font-family: "Abyssinica SIL";
-    font-size: 20px
+    font-size: 20px;
+}
+
+article {
+    white-space: nowrap;
+    margin: 28px auto;
 }
 
 .AboutUs {
@@ -56,11 +61,22 @@ article div {
 }
 
 .paragraph {
+    justify-content: center;
+    text-align: center;
     letter-spacing: .5rem;
 }
 
 .address {
     font-size: 16px;
     letter-spacing: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    main {
+        font-size: 16px;
+    }
+    .address {
+        display: none;
+    }
 }
 </style>

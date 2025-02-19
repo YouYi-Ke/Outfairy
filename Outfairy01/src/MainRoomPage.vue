@@ -5,7 +5,7 @@
             <div class="carousel">
                 <div class="carousel-track" :style="{transform:`translateX(-${currentIndex * 100}%)`}">
                     <div class="carousel-item" v-for="(image, index) in bannerImages" :key="index">
-                        <img :src="image" :alt="banner" />
+                        <img :src="image"/>
                     </div>
                 </div>
             </div>
@@ -15,21 +15,25 @@
                 @click="goToSlide(index)"></span>
         </div>
         <!-- 商品列 -->
-        <div class="product-grid">
-            <div v-for="product in displayProducts" :key="product.id" class="product-card">
-                <img :src="product.image" class="product-image" alt="Product">
-                <p class="product-name">{{ product.name }}</p>
-                <p class="product-price">{{ product.price }}</p>
-            </div>
+        <div class="product-grid-container">
+            <div class="product-grid">
+                <div v-for="product in displayProducts" :key="product.id" class="product-card">
+                    <img :src="product.image" class="product-image" alt="Product">
+                    <p class="product-name">{{ product.name }}</p>
+                    <p class="product-price">{{ product.price }}</p>
+                </div>
+            </div> 
         </div>
         <button v-if="displayProducts.length < products.length" class="load-more" @click="loadMore">查看更多</button>
         <!-- 每週穿搭 -->
         <div class="weeklyTrend">Weekly Trends</div>
-        <div class="trend-grid">
-            <div v-for="trend in trends" :key="trend.id" class="trend-card">
-                <img :src="trend.image" class="trend-image" alt="Trend" />
-                <p class="trend-day">{{ trend.day }}</p>
-            </div>
+        <div class="trend-grid-container">
+            <div class="trend-grid">
+                <div v-for="trend in trends" :key="trend.id" class="trend-card">
+                    <img :src="trend.image" class="trend-image" alt="Trend" />
+                    <p class="trend-day">{{ trend.day }}</p>
+                </div>
+            </div>    
         </div>
     </div>
 </template>
@@ -59,7 +63,7 @@ const goToSlide = (index) => {
 };
 
 const startAutoSlide = () => {
-    intervalId = setInterval(nextSlide, 1000); // 自動輪播每 3 秒切換
+    intervalId = setInterval(nextSlide, 3000);
 };
 
 const stopAutoSlide = () => {
@@ -91,7 +95,7 @@ const loadMore = () => {
 const trends = ref([
     { id: 1, day: "Monday", image: "/images/MondayOutfit.png" },
     { id: 2, day: "Tuesday", image: "/images/MondayOutfit.png" },
-    { id: 3, day: "Wendesday", image: "/images/MondayOutfit.png" },
+    { id: 3, day: "Wednesday", image: "/images/MondayOutfit.png" },
     { id: 4, day: "Thursday", image: "/images/MondayOutfit.png" },
     { id: 5, day: "Friday", image: "/images/MondayOutfit.png" },
     { id: 6, day: "Saturday", image: "/images/MondayOutfit.png" },
@@ -108,14 +112,16 @@ const trends = ref([
 
 .container {
     padding: 0;
-    margin: 0 5rem;
+    margin: 0;
     box-sizing: border-box;
 }
 
 .hero-section {
     width: var(--carousel-width);
+    max-width: 1500px;
     height: var(--carousel-height);
-    margin: 0 2rem;
+    margin: 0 auto;
+    margin-bottom: 5px;
     position: relative;
     overflow: hidden;
 }
@@ -147,7 +153,7 @@ const trends = ref([
 .carousel-indicators {
     display: flex;
     justify-content: center;
-    margin: 10px;
+    margin: 0px auto 20px;
 }
 
 .carousel-indicators span {
@@ -155,7 +161,7 @@ const trends = ref([
     height: 10px;
     background-color: #bbb;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -165,39 +171,41 @@ const trends = ref([
     /* 目前顯示的圖片指示器變色 */
 }
 
+.product-grid-container {
+    margin: 1vw 3vw;
+    text-align: center;
+}
+
 .product-grid {
     display: grid;
+    max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3vw;
-    margin: 5rem;
-    margin-bottom: 1rem;
-    font-family: "Imprima", serif;
-    justify-content: center;
-    text-align: center;
+    gap: 30px;
+    margin: 0 auto;
 }
 
 .product-card {
-    width: var(--product-width);
-    height: var(--product-height);
-    background-color: white;
-    padding-bottom: 3rem;
-    text-align: center;
+    padding-bottom: 1rem;
 }
 
 .product-image {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 3/4;
     object-fit: cover;
 }
 
 .product-name {
-    margin: 0%;
+    margin: 0;
+    font-family: "Imprima", serif;
     font-size: 24px;
     font-weight: 400;
 }
 
 .product-price {
-    margin: 0%;
+    font-family: "Imprima", serif;
+    margin: 0;
     font-size: 24px;
 }
 
@@ -221,30 +229,35 @@ const trends = ref([
 }
 
 .weeklyTrend {
-    padding: 20px;
-    font-family: "inknut-antiqua-regular";
     text-align: center;
-    font-size: 36px;
+    justify-content: center;
+    font-size: 24px;
     font-family: "Inknut Antiqua", serif;
+    margin: 2vw 0;
+}
+
+.trend-grid-container {
+    margin: 0 3vw;
+    text-align: center;
 }
 
 .trend-grid {
     display: grid;
+    max-width: 1200px;
     grid-template-columns: repeat(3, 1fr);
     gap: 3vw;
-    padding: 40px 80px 40px 80px;
-    margin-bottom: 20px;
+    margin: 0 auto;
 }
 
 .trend-card {
-    background-color: white;
     padding-bottom: 1rem;
-    text-align: center;
 }
 
 .trend-image {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 9/16;
     object-fit: cover;
 }
 
@@ -253,5 +266,49 @@ const trends = ref([
     font-size: 24px;
     font-weight: 400;
     font-family: "Imprima", serif;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .product-image{
+        max-width: 300px;
+    }
+    .product-name {
+        font-size: 16px;
+    }
+    .product-price{
+        font-size: 16px;
+    }
+    .load-more {
+        width: 200px;
+        font-size: 10px;
+    }
+    .trend-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .trend-image {
+        max-width: 300px;
+    }
+    .trend-day {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-image{
+        max-width: 400px;
+    }
+    .trend-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .trend-image {
+        max-width: 400px;
+    }
 }
 </style>
