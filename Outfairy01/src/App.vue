@@ -20,6 +20,7 @@ let change = function (clickedPage) {
                 <li :class="page === 'Main' ? 'current' : ''" @click="change('Main');">Main Room</li>
                 <li :class="page === 'Shop' ? 'current' : ''" @click="change('Shop');">Shop Room</li>
                 <li :class="page === 'AboutUs' ? 'current' : ''" @click="change('AboutUs');">About Us</li>
+                <li :class="page === 'Test' ? 'current' : ''" @click="change('ProductDescription');">Test</li>
             </ul>
             <ul class="nav-right">
                 <li :class="page === 'Personal' ? 'current' : ''" @click="change('Personal');">

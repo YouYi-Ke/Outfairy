@@ -1,15 +1,5 @@
 <template>
-    <div class="container mx-auto px-4">
-      <!-- Header -->
-      <header class="flex justify-between py-4 border-b">
-        <h1 class="text-2xl font-bold">Outfairy</h1>
-        <nav class="flex gap-4">
-          <a href="#">Main Room</a>
-          <a href="#">Shop Room</a>
-          <a href="#">About Us</a>
-        </nav>
-      </header>
-  
+    <div class="container">
       <!-- Product Section -->
       <div class="grid grid-cols-2 gap-8 py-8">
         <!-- Product Images -->
@@ -33,6 +23,7 @@
               <button @click="activeTab = 'more'" :class="{ 'font-bold': activeTab === 'more' }">了解更多</button>
               <button @click="activeTab = 'shipping'" :class="{ 'font-bold': activeTab === 'shipping' }">送貨及付款方式</button>
             </div>
+            
             <div class="mt-4">
               <div v-if="activeTab === 'description'">
                 <p><strong>品牌：</strong>不明</p>
@@ -82,10 +73,10 @@
       return {
         mainImage: '/path/to/main-image.jpg', // 替換成實際圖片 URL
         images: [
-          '/path/to/image1.jpg',
-          '/path/to/image2.jpg',
-          '/path/to/image3.jpg',
-          '/path/to/image4.jpg',
+          '/images/clothPhoto.jpeg',
+          '/images/clothPhoto.jpeg',
+          '/images/clothPhoto.jpeg',
+          '/images/clothPhoto.jpeg',
         ],
         activeTab: 'description',
         relatedProducts: [
