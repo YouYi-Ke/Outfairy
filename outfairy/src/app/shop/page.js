@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Breadcrumb from "../components/Breadcrumb";
 import Sidebar from "../components/Sidebar";
 import Grid from "../components/Grid";
-import { products } from "../data/Data";
+import { Products } from "../data/products";
 
 export default function Shop() {
   return (
@@ -14,7 +14,7 @@ export default function Shop() {
   <div className="flex items-start">
     <Sidebar />
     <div className="flex-1 max-w-7xl mx-auto">
-      <Grid products={products} />
+      <Grid products={Products.women} />
     </div>
   </div>
   </div>

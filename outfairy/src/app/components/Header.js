@@ -18,9 +18,9 @@ export default function Header() {
           className="text-center"
           style={{
             fontFamily: "Cormorant, serif",
-            fontSize: "42px",
+            fontSize: "46px",
             lineHeight: "100%",
-            letterSpacing: "2px",
+            letterSpacing: "1px",
           }}
         >
           Outfairy
@@ -37,9 +37,9 @@ export default function Header() {
           <Link href="/shop" className="hover:underline">配件</Link>
         </nav>
         <div className="flex items-center space-x-6">
-          <Search className="w-5 h-5" />
-          <ShoppingCart className="w-5 h-5" />
-          <User className="w-5 h-5" />
+          <Search className="w-6 h-6" />
+          <ShoppingCart className="w-6 h-6" />
+          <User className="w-6 h-6" />
         </div>
       </header>
     </>

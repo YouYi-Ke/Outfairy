@@ -2,18 +2,46 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const newArrivals = [
+  { id: 1, src: "/image1.jpg", alt: "product1", href:"/men", label:"男裝"  },
+  { id: 2, src: "/image2.jpg", alt: "product2", href:"/women", label:"女裝"  },
+  { id: 3, src: "/image3.png", alt: "product3", href:"/kids", label:"童裝"  },
+  { id: 4, src: "/image4.png", alt: "product4", href:"/accessories", label:"配件" },
+];
+
 export default function NewArrivals() {
   return (
-    <section className="px-8 py-10">
+    <section className="px-8 py-10 w-full">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold">本週新品</h2>
-        <Link href="#" className="text-sm text-gray-600">查看更多</Link>
+        <h2 className="text-3xl font-semibold">本週新品</h2>
+        <Link href="#" className="text-xl font-semibold hover:underline">
+          查看更多
+        </Link>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <Image src="/product1.jpg" alt="product1" width={200} height={300} className="object-cover rounded" />
-        <Image src="/product2.jpg" alt="product2" width={200} height={300} className="object-cover rounded" />
-        <Image src="/product3.jpg" alt="product3" width={200} height={300} className="object-cover rounded" />
-        <Image src="/product4.jpg" alt="product4" width={200} height={300} className="object-cover rounded" />
+
+       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
+        {newArrivals.map((item) => (
+          <Link
+            key={item.id}
+            href={item.href}
+            className="group block w-full aspect-square relative rounded-2xl overflow-hidden transform transition-transform duration-300 hover:scale-103"
+          >
+            {/* 圖片 */}
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              className="object-cover"
+            />
+
+            {/* Hover 遮罩與文字 */}
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-white px-18 py-2 rounded-xl text-[#ac8a46] text-2xl font-semibold">
+                {item.label}
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );
