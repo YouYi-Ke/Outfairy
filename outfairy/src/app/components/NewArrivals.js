@@ -6,7 +6,7 @@ export default function NewArrivals() {
   return (
     <section className="px-8 py-10">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-semibold">本週新品</h2>
+        <h2 className="text-xl font-semibold">本週新品</h2>
         <Link href="#" className="text-sm text-gray-600">查看更多</Link>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">

@@ -28,21 +28,13 @@ export default function Header() {
         </Link>
 
         <nav
-          className="space-x-12 text-sm"
-          style={{
-            fontFamily: "'Songti TC', 'Noto Serif TC', serif",
-            fontWeight: 400,
-            fontSize: "18px",
-            lineHeight: "100%",
-            letterSpacing: "0%",
-            textAlign: "center",
-          }}
+          className="space-x-12 text-black text-xl font-semibold"
         >
-          <Link href="/">首頁</Link>
-          <Link href="/shop">男裝</Link>
-          <Link href="/shop">女裝</Link>
-          <Link href="/shop">童裝</Link>
-          <Link href="/shop">配件</Link>
+          <Link href="/" className="hover:underline">首頁</Link>
+          <Link href="/shop" className="hover:underline">男裝</Link>
+          <Link href="/shop" className="hover:underline">女裝</Link>
+          <Link href="/shop" className="hover:underline">童裝</Link>
+          <Link href="/shop" className="hover:underline">配件</Link>
         </nav>
         <div className="flex items-center space-x-6">
           <Search className="w-5 h-5" />
