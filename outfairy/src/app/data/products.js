@@ -1,10 +1,10 @@
 export const Products = {
   men: [
     {id: 1, name: "休閒闊腿褲", price: 120,},
-    {id: 2, name: "休閒闊腿褲", price: 120,},
-    {id: 3, name: "休閒闊腿褲", price: 120,},
-    {id: 4, name: "休閒闊腿褲", price: 120,},
-    {id: 5, name: "休閒闊腿褲", price: 120,},
+    {id: 2, name: "襯衫", price: 120,},
+    {id: 3, name: "足球鞋", price: 120,},
+    {id: 4, name: "排球襪子", price: 120,},
+    {id: 5, name: "領巾", price: 120,},
     {id: 6, name: "休閒闊腿褲", price: 120,},
     {id: 7, name: "休閒闊腿褲", price: 120,},
     {id: 8, name: "休閒闊腿褲", price: 120,},
@@ -33,10 +33,10 @@ export const Products = {
 
   kids: [
     {id: 1, name: "休閒闊腿褲", price: 120,},
-    {id: 2, name: "休閒闊腿褲", price: 120,},
-    {id: 3, name: "休閒闊腿褲", price: 120,},
-    {id: 4, name: "休閒闊腿褲", price: 120,},
-    {id: 5, name: "休閒闊腿褲", price: 120,},
+    {id: 2, name: "襯衫", price: 120,},
+    {id: 3, name: "足球鞋", price: 120,},
+    {id: 4, name: "排球襪子", price: 120,},
+    {id: 5, name: "領巾", price: 120,},
     {id: 6, name: "休閒闊腿褲", price: 120,},
     {id: 7, name: "休閒闊腿褲", price: 120,},
     {id: 8, name: "休閒闊腿褲", price: 120,},
@@ -65,10 +65,10 @@ export const Products = {
 
   accessories: [
     {id: 1, name: "休閒闊腿褲", price: 120,},
-    {id: 2, name: "休閒闊腿褲", price: 120,},
-    {id: 3, name: "休閒闊腿褲", price: 120,},
-    {id: 4, name: "休閒闊腿褲", price: 120,},
-    {id: 5, name: "休閒闊腿褲", price: 120,},
+    {id: 2, name: "襯衫", price: 120,},
+    {id: 3, name: "足球鞋", price: 120,},
+    {id: 4, name: "排球襪子", price: 120,},
+    {id: 5, name: "領巾", price: 120,},
     {id: 6, name: "休閒闊腿褲", price: 120,},
     {id: 7, name: "休閒闊腿褲", price: 120,},
     {id: 8, name: "休閒闊腿褲", price: 120,},
@@ -97,10 +97,10 @@ export const Products = {
 
   women: [
     {id: 1, name: "休閒闊腿褲", price: 120,},
-    {id: 2, name: "休閒闊腿褲", price: 120,},
-    {id: 3, name: "休閒闊腿褲", price: 120,},
-    {id: 4, name: "休閒闊腿褲", price: 120,},
-    {id: 5, name: "休閒闊腿褲", price: 120,},
+    {id: 2, name: "襯衫", price: 120,},
+    {id: 3, name: "足球鞋", price: 120,},
+    {id: 4, name: "排球襪子", price: 120,},
+    {id: 5, name: "領巾", price: 120,},
     {id: 6, name: "休閒闊腿褲", price: 120,},
     {id: 7, name: "休閒闊腿褲", price: 120,},
     {id: 8, name: "休閒闊腿褲", price: 120,},
