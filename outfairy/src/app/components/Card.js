@@ -2,7 +2,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 
 export default function Card({ product }) {
   return (
-    <div className="bg-[#fbf8f4] rounded-xl w-full aspect-[262.59/392.49] overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+    <div className="bg-[#fbf8f4] rounded-xl w-full aspect-[262.59/392.49] overflow-hidden shadow-sm hover:shadow-lg hover:scale-101 transition flex flex-col">
       <div className="bg-[#d9d9d9] w-full aspect-[262.59/279] rounded-t-xl"></div>
 
       <div className="flex flex-col justify-between flex-1 px-2 pb-2">

@@ -15,23 +15,23 @@ export default function HomePage() {
       <div>
       <ProductCarousel
         title="男裝"
-        products={Products.men}
-        viewMoreHref="/men"
+        products={Products.men.slice(0,16)}
+        viewMoreHref="/shop"
       />
       <ProductCarousel
         title="女裝"
-        products={Products.women}
-        viewMoreHref="/women"
+        products={Products.women.slice(0,16)}
+        viewMoreHref="/shop"
       />
       <ProductCarousel
         title="童裝"
-        products={Products.kids}
-        viewMoreHref="/kids"
+        products={Products.kids.slice(0,16)}
+        viewMoreHref="/shop"
       />
       <ProductCarousel
         title="配件"
-        products={Products.accessories}
-        viewMoreHref="/accessories"
+        products={Products.accessories.slice(0,16)}
+        viewMoreHref="/shop"
       />
     </div>
 

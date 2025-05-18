@@ -3,23 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 const newArrivals = [
-  { id: 1, src: "/image1.jpg", alt: "product1", href:"/men", label:"男裝"  },
-  { id: 2, src: "/image2.jpg", alt: "product2", href:"/women", label:"女裝"  },
-  { id: 3, src: "/image3.png", alt: "product3", href:"/kids", label:"童裝"  },
-  { id: 4, src: "/image4.png", alt: "product4", href:"/accessories", label:"配件" },
+  { id: 1, src: "/image1.jpg", alt: "product1", href:"/shop", label:"男裝"  },
+  { id: 2, src: "/image2.jpg", alt: "product2", href:"/shop", label:"女裝"  },
+  { id: 3, src: "/image3.png", alt: "product3", href:"/shop", label:"童裝"  },
+  { id: 4, src: "/image4.png", alt: "product4", href:"/shop", label:"配件" },
 ];
 
 export default function NewArrivals() {
   return (
-    <section className="px-8 py-10 w-full">
-      <div className="flex justify-between items-center mb-6">
+    <section className="px-8 py-18 w-full">
+      <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-semibold">本週新品</h2>
         <Link href="#" className="text-xl font-semibold hover:underline">
           查看更多
         </Link>
       </div>
 
-       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
+       <div className="grid grid-cols-4 md:grid-cols-4 gap-2 w-full">
         {newArrivals.map((item) => (
           <Link
             key={item.id}
