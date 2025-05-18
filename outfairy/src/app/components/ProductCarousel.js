@@ -49,16 +49,12 @@ export default function ProductCarousel({ title, products, viewMoreHref }) {
             transform: `translateX(-${currentPage * slideWidth}%)`,
           }}
         >
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="w-1/4 px-4 box-border"
-            >
-              <Link href={`/product/${product.id}`}>
-                <Card product={product} />
-              </Link>
-            </div>
-          ))}
+        {products.map((product) => (
+          <div key={product.id} className="w-1/4 px-4 box-border">
+            <Card product={product} />
+          </div>
+        ))}
+
         </div>
         </div>
 
